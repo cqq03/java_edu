@@ -1,0 +1,23 @@
+package 네트워크;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class TCP서버 {
+
+	public static void main(String[] args) throws Exception {
+		int count = 0;
+		//클라이언트의 요청을 승인해주기 위핸 소켓
+		
+		ServerSocket server = new ServerSocket(9001);
+		System.out.println("서버 소켓 시작됨.");
+		System.out.println("클라이언트의 요청을 기다리는중...");
+		while (true) {
+			
+			Socket socket = server.accept();
+			count++;
+			System.out.println("서버가 클라이언트의 요청을 승인함");
+		}
+	}
+}
